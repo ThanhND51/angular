@@ -1,0 +1,16 @@
+<p [style.color]="isHighLight ? 'red' : 'black'">
+  user-form works!
+</p>
+<input type="text" [placeholder]="username" (keyup) = 'showEvent($event)'>
+<h3>Your name is: {{name}}</h3>
+<input type="text" [placeholder]="username" [(ngModel)] = 'name' #txtUsername>
+<br>
+<code>{{ txtUsername.value }}</code> 
+<br>
+<button (click) = "isHighLight = !isHighLight">change High Light</button>
+<!-- template reference variable -->
+<br><br>
+<div [class]="isHighLight ? 'circle' : 'square'"></div>
+<br>
+
+

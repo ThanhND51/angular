@@ -1,0 +1,10 @@
+<h1>TODO LIST</h1>
+<input type="text" placeholder="Enter Todo" [(ngModel)] = 'input'>
+<button (click) = 'add()'>Add</button>
+<br>
+<ul>
+  <li *ngFor = 'let todo of todos'>
+    <span (click) = 'todo.completed = !todo.completed' [style.background-color] = 'todo.completed ? "#8BBFE8" : "white"'>Task Name: {{ todo.name }} Completed: {{ todo.completed }}</span>
+    <button (click) = 'del(todo.id)'>Delete</button>
+  </li>
+</ul>

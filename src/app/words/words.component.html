@@ -1,0 +1,22 @@
+<p>
+  words works!
+</p>
+<input type="text" placeholder="English" [(ngModel)]='english' *ngIf='!show'>
+<br>
+<input type="text" placeholder="VietNamese" [(ngModel)]='vnese' *ngIf='!show'>
+<br>
+<button (click)='show = !show' *ngIf='show'>Them tu moi</button>
+<button (click)='pushWord()' *ngIf='!show'>Them tu moi</button>
+<br>
+<select [(ngModel)] = 'filter'>
+  <option value="XEM_TAT_CA">xem tat ca</option>
+  <option value="XEM_TU_DA_THUOC">xem tu da thuoc</option>
+  <option value="XEM_TU_CHUA_THUOC">xem tu chua thuoc</option>
+</select>
+<div *ngFor='let word of arrWords'>
+  <div [style.background-color] = '"#BCC6E8"'>
+    <h4 [style.color]='word.memorized ? "blue" : "red"'>{{word.en}}</h4>
+    <p>{{word.vn}}</p>
+    <button (click) = 'remove(word.id)'>Xoa</button>
+  </div>
+</div>
